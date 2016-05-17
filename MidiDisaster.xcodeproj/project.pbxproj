@@ -1,0 +1,499 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CDC77A911CEB81CE0056B15A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CDC77A901CEB81CE0056B15A /* AppDelegate.m */; };
+		CDC77A941CEB81CE0056B15A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CDC77A931CEB81CE0056B15A /* main.m */; };
+		CDC77A961CEB81CE0056B15A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CDC77A951CEB81CE0056B15A /* Assets.xcassets */; };
+		CDC77A991CEB81CE0056B15A /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDC77A971CEB81CE0056B15A /* MainMenu.xib */; };
+		CDC77AD91CEB82570056B15A /* FMInstrument.mm in Sources */ = {isa = PBXBuildFile; fileRef = CDC77AA11CEB82570056B15A /* FMInstrument.mm */; };
+		CDC77ADA1CEB82570056B15A /* MidiPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = CDC77AA31CEB82570056B15A /* MidiPlayer.m */; };
+		CDC77ADB1CEB82570056B15A /* dx7note.cc in Sources */ = {isa = PBXBuildFile; fileRef = CDC77AA71CEB82570056B15A /* dx7note.cc */; };
+		CDC77ADC1CEB82570056B15A /* env.cc in Sources */ = {isa = PBXBuildFile; fileRef = CDC77AA91CEB82570056B15A /* env.cc */; };
+		CDC77ADD1CEB82570056B15A /* exp2.cc in Sources */ = {isa = PBXBuildFile; fileRef = CDC77AAB1CEB82570056B15A /* exp2.cc */; };
+		CDC77ADE1CEB82570056B15A /* fir.cc in Sources */ = {isa = PBXBuildFile; fileRef = CDC77AAD1CEB82570056B15A /* fir.cc */; };
+		CDC77ADF1CEB82570056B15A /* fm_core.cc in Sources */ = {isa = PBXBuildFile; fileRef = CDC77AAF1CEB82570056B15A /* fm_core.cc */; };
+		CDC77AE01CEB82570056B15A /* fm_op_kernel.cc in Sources */ = {isa = PBXBuildFile; fileRef = CDC77AB11CEB82570056B15A /* fm_op_kernel.cc */; };
+		CDC77AE11CEB82570056B15A /* freqlut.cc in Sources */ = {isa = PBXBuildFile; fileRef = CDC77AB31CEB82570056B15A /* freqlut.cc */; };
+		CDC77AE21CEB82570056B15A /* lfo.cc in Sources */ = {isa = PBXBuildFile; fileRef = CDC77AB51CEB82570056B15A /* lfo.cc */; };
+		CDC77AE31CEB82570056B15A /* log2.cc in Sources */ = {isa = PBXBuildFile; fileRef = CDC77AB71CEB82570056B15A /* log2.cc */; };
+		CDC77AE41CEB82570056B15A /* patch.cc in Sources */ = {isa = PBXBuildFile; fileRef = CDC77ABA1CEB82570056B15A /* patch.cc */; };
+		CDC77AE51CEB82570056B15A /* pitchenv.cc in Sources */ = {isa = PBXBuildFile; fileRef = CDC77ABC1CEB82570056B15A /* pitchenv.cc */; };
+		CDC77AE61CEB82570056B15A /* resofilter.cc in Sources */ = {isa = PBXBuildFile; fileRef = CDC77ABE1CEB82570056B15A /* resofilter.cc */; };
+		CDC77AE71CEB82570056B15A /* ringbuffer.cc in Sources */ = {isa = PBXBuildFile; fileRef = CDC77AC01CEB82570056B15A /* ringbuffer.cc */; };
+		CDC77AE81CEB82570056B15A /* sawtooth.cc in Sources */ = {isa = PBXBuildFile; fileRef = CDC77AC21CEB82570056B15A /* sawtooth.cc */; };
+		CDC77AE91CEB82570056B15A /* sin.cc in Sources */ = {isa = PBXBuildFile; fileRef = CDC77AC41CEB82570056B15A /* sin.cc */; };
+		CDC77AEA1CEB82570056B15A /* synth_unit.cc in Sources */ = {isa = PBXBuildFile; fileRef = CDC77AC71CEB82570056B15A /* synth_unit.cc */; };
+		CDC77AEB1CEB82570056B15A /* wavout.cc in Sources */ = {isa = PBXBuildFile; fileRef = CDC77AC91CEB82570056B15A /* wavout.cc */; };
+		CDC77AEC1CEB82570056B15A /* NBAudioStream.m in Sources */ = {isa = PBXBuildFile; fileRef = CDC77ACC1CEB82570056B15A /* NBAudioStream.m */; };
+		CDC77AED1CEB82570056B15A /* quarter_note_test.mid in Resources */ = {isa = PBXBuildFile; fileRef = CDC77ACF1CEB82570056B15A /* quarter_note_test.mid */; };
+		CDC77AEE1CEB82570056B15A /* chopin.mid in Resources */ = {isa = PBXBuildFile; fileRef = CDC77AD01CEB82570056B15A /* chopin.mid */; };
+		CDC77AF11CEB82570056B15A /* theme.mid in Resources */ = {isa = PBXBuildFile; fileRef = CDC77AD31CEB82570056B15A /* theme.mid */; };
+		CDC77AF21CEB82570056B15A /* brass.syx in Resources */ = {isa = PBXBuildFile; fileRef = CDC77AD51CEB82570056B15A /* brass.syx */; };
+		CDC77AF31CEB82570056B15A /* guitars.syx in Resources */ = {isa = PBXBuildFile; fileRef = CDC77AD61CEB82570056B15A /* guitars.syx */; };
+		CDC77AF41CEB82570056B15A /* nb-theme.syx in Resources */ = {isa = PBXBuildFile; fileRef = CDC77AD71CEB82570056B15A /* nb-theme.syx */; };
+		CDC77AF51CEB82570056B15A /* yamaha.syx in Resources */ = {isa = PBXBuildFile; fileRef = CDC77AD81CEB82570056B15A /* yamaha.syx */; };
+		CDC77AF71CEB82A20056B15A /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDC77AF61CEB82A20056B15A /* AudioToolbox.framework */; };
+		CDC77AF91CEB82A60056B15A /* CoreMIDI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDC77AF81CEB82A60056B15A /* CoreMIDI.framework */; };
+		CDC77AFB1CEB82AA0056B15A /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDC77AFA1CEB82AA0056B15A /* CoreAudio.framework */; };
+		CDC77AFD1CEB82AE0056B15A /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDC77AFC1CEB82AE0056B15A /* OpenAL.framework */; };
+		CDC77B001CEB82DD0056B15A /* FileHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = CDC77AFF1CEB82DD0056B15A /* FileHelper.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		CDC77A8C1CEB81CE0056B15A /* MidiDisaster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MidiDisaster.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CDC77A8F1CEB81CE0056B15A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		CDC77A901CEB81CE0056B15A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		CDC77A931CEB81CE0056B15A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		CDC77A951CEB81CE0056B15A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CDC77A981CEB81CE0056B15A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		CDC77A9A1CEB81CE0056B15A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CDC77AA01CEB82570056B15A /* FMInstrument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMInstrument.h; sourceTree = "<group>"; };
+		CDC77AA11CEB82570056B15A /* FMInstrument.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = FMInstrument.mm; sourceTree = "<group>"; };
+		CDC77AA21CEB82570056B15A /* MidiPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MidiPlayer.h; sourceTree = "<group>"; };
+		CDC77AA31CEB82570056B15A /* MidiPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MidiPlayer.m; sourceTree = "<group>"; };
+		CDC77AA51CEB82570056B15A /* aligned_buf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aligned_buf.h; sourceTree = "<group>"; };
+		CDC77AA61CEB82570056B15A /* controllers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = controllers.h; sourceTree = "<group>"; };
+		CDC77AA71CEB82570056B15A /* dx7note.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = dx7note.cc; sourceTree = "<group>"; };
+		CDC77AA81CEB82570056B15A /* dx7note.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dx7note.h; sourceTree = "<group>"; };
+		CDC77AA91CEB82570056B15A /* env.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = env.cc; sourceTree = "<group>"; };
+		CDC77AAA1CEB82570056B15A /* env.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = env.h; sourceTree = "<group>"; };
+		CDC77AAB1CEB82570056B15A /* exp2.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = exp2.cc; sourceTree = "<group>"; };
+		CDC77AAC1CEB82570056B15A /* exp2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = exp2.h; sourceTree = "<group>"; };
+		CDC77AAD1CEB82570056B15A /* fir.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = fir.cc; sourceTree = "<group>"; };
+		CDC77AAE1CEB82570056B15A /* fir.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fir.h; sourceTree = "<group>"; };
+		CDC77AAF1CEB82570056B15A /* fm_core.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = fm_core.cc; sourceTree = "<group>"; };
+		CDC77AB01CEB82570056B15A /* fm_core.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fm_core.h; sourceTree = "<group>"; };
+		CDC77AB11CEB82570056B15A /* fm_op_kernel.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = fm_op_kernel.cc; sourceTree = "<group>"; };
+		CDC77AB21CEB82570056B15A /* fm_op_kernel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fm_op_kernel.h; sourceTree = "<group>"; };
+		CDC77AB31CEB82570056B15A /* freqlut.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = freqlut.cc; sourceTree = "<group>"; };
+		CDC77AB41CEB82570056B15A /* freqlut.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = freqlut.h; sourceTree = "<group>"; };
+		CDC77AB51CEB82570056B15A /* lfo.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lfo.cc; sourceTree = "<group>"; };
+		CDC77AB61CEB82570056B15A /* lfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lfo.h; sourceTree = "<group>"; };
+		CDC77AB71CEB82570056B15A /* log2.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = log2.cc; sourceTree = "<group>"; };
+		CDC77AB81CEB82570056B15A /* log2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = log2.h; sourceTree = "<group>"; };
+		CDC77AB91CEB82570056B15A /* module.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = module.h; sourceTree = "<group>"; };
+		CDC77ABA1CEB82570056B15A /* patch.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = patch.cc; sourceTree = "<group>"; };
+		CDC77ABB1CEB82570056B15A /* patch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = patch.h; sourceTree = "<group>"; };
+		CDC77ABC1CEB82570056B15A /* pitchenv.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = pitchenv.cc; sourceTree = "<group>"; };
+		CDC77ABD1CEB82570056B15A /* pitchenv.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pitchenv.h; sourceTree = "<group>"; };
+		CDC77ABE1CEB82570056B15A /* resofilter.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = resofilter.cc; sourceTree = "<group>"; };
+		CDC77ABF1CEB82570056B15A /* resofilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = resofilter.h; sourceTree = "<group>"; };
+		CDC77AC01CEB82570056B15A /* ringbuffer.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ringbuffer.cc; sourceTree = "<group>"; };
+		CDC77AC11CEB82570056B15A /* ringbuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ringbuffer.h; sourceTree = "<group>"; };
+		CDC77AC21CEB82570056B15A /* sawtooth.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = sawtooth.cc; sourceTree = "<group>"; };
+		CDC77AC31CEB82570056B15A /* sawtooth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sawtooth.h; sourceTree = "<group>"; };
+		CDC77AC41CEB82570056B15A /* sin.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = sin.cc; sourceTree = "<group>"; };
+		CDC77AC51CEB82570056B15A /* sin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sin.h; sourceTree = "<group>"; };
+		CDC77AC61CEB82570056B15A /* synth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = synth.h; sourceTree = "<group>"; };
+		CDC77AC71CEB82570056B15A /* synth_unit.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = synth_unit.cc; sourceTree = "<group>"; };
+		CDC77AC81CEB82570056B15A /* synth_unit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = synth_unit.h; sourceTree = "<group>"; };
+		CDC77AC91CEB82570056B15A /* wavout.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = wavout.cc; sourceTree = "<group>"; };
+		CDC77ACA1CEB82570056B15A /* wavout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = wavout.h; sourceTree = "<group>"; };
+		CDC77ACB1CEB82570056B15A /* NBAudioStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NBAudioStream.h; sourceTree = "<group>"; };
+		CDC77ACC1CEB82570056B15A /* NBAudioStream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NBAudioStream.m; sourceTree = "<group>"; };
+		CDC77ACF1CEB82570056B15A /* quarter_note_test.mid */ = {isa = PBXFileReference; lastKnownFileType = audio.midi; path = quarter_note_test.mid; sourceTree = "<group>"; };
+		CDC77AD01CEB82570056B15A /* chopin.mid */ = {isa = PBXFileReference; lastKnownFileType = audio.midi; path = chopin.mid; sourceTree = "<group>"; };
+		CDC77AD31CEB82570056B15A /* theme.mid */ = {isa = PBXFileReference; lastKnownFileType = audio.midi; path = theme.mid; sourceTree = "<group>"; };
+		CDC77AD51CEB82570056B15A /* brass.syx */ = {isa = PBXFileReference; lastKnownFileType = file; path = brass.syx; sourceTree = "<group>"; };
+		CDC77AD61CEB82570056B15A /* guitars.syx */ = {isa = PBXFileReference; lastKnownFileType = file; path = guitars.syx; sourceTree = "<group>"; };
+		CDC77AD71CEB82570056B15A /* nb-theme.syx */ = {isa = PBXFileReference; lastKnownFileType = file; path = "nb-theme.syx"; sourceTree = "<group>"; };
+		CDC77AD81CEB82570056B15A /* yamaha.syx */ = {isa = PBXFileReference; lastKnownFileType = file; path = yamaha.syx; sourceTree = "<group>"; };
+		CDC77AF61CEB82A20056B15A /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		CDC77AF81CEB82A60056B15A /* CoreMIDI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMIDI.framework; path = System/Library/Frameworks/CoreMIDI.framework; sourceTree = SDKROOT; };
+		CDC77AFA1CEB82AA0056B15A /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
+		CDC77AFC1CEB82AE0056B15A /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
+		CDC77AFE1CEB82DD0056B15A /* FileHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileHelper.h; sourceTree = "<group>"; };
+		CDC77AFF1CEB82DD0056B15A /* FileHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileHelper.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CDC77A891CEB81CE0056B15A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CDC77AFD1CEB82AE0056B15A /* OpenAL.framework in Frameworks */,
+				CDC77AFB1CEB82AA0056B15A /* CoreAudio.framework in Frameworks */,
+				CDC77AF91CEB82A60056B15A /* CoreMIDI.framework in Frameworks */,
+				CDC77AF71CEB82A20056B15A /* AudioToolbox.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CDC77A831CEB81CE0056B15A = {
+			isa = PBXGroup;
+			children = (
+				CDC77AFC1CEB82AE0056B15A /* OpenAL.framework */,
+				CDC77AFA1CEB82AA0056B15A /* CoreAudio.framework */,
+				CDC77AF81CEB82A60056B15A /* CoreMIDI.framework */,
+				CDC77AF61CEB82A20056B15A /* AudioToolbox.framework */,
+				CDC77A8E1CEB81CE0056B15A /* MidiDisaster */,
+				CDC77A8D1CEB81CE0056B15A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CDC77A8D1CEB81CE0056B15A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CDC77A8C1CEB81CE0056B15A /* MidiDisaster.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CDC77A8E1CEB81CE0056B15A /* MidiDisaster */ = {
+			isa = PBXGroup;
+			children = (
+				CDC77AFE1CEB82DD0056B15A /* FileHelper.h */,
+				CDC77AFF1CEB82DD0056B15A /* FileHelper.m */,
+				CDC77A8F1CEB81CE0056B15A /* AppDelegate.h */,
+				CDC77A901CEB81CE0056B15A /* AppDelegate.m */,
+				CDC77A951CEB81CE0056B15A /* Assets.xcassets */,
+				CDC77AA01CEB82570056B15A /* FMInstrument.h */,
+				CDC77AA11CEB82570056B15A /* FMInstrument.mm */,
+				CDC77A9A1CEB81CE0056B15A /* Info.plist */,
+				CDC77A971CEB81CE0056B15A /* MainMenu.xib */,
+				CDC77AA21CEB82570056B15A /* MidiPlayer.h */,
+				CDC77AA31CEB82570056B15A /* MidiPlayer.m */,
+				CDC77AA41CEB82570056B15A /* MSFA */,
+				CDC77ACB1CEB82570056B15A /* NBAudioStream.h */,
+				CDC77ACC1CEB82570056B15A /* NBAudioStream.m */,
+				CDC77ACD1CEB82570056B15A /* Resources */,
+				CDC77A921CEB81CE0056B15A /* Supporting Files */,
+			);
+			path = MidiDisaster;
+			sourceTree = "<group>";
+		};
+		CDC77A921CEB81CE0056B15A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CDC77A931CEB81CE0056B15A /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CDC77AA41CEB82570056B15A /* MSFA */ = {
+			isa = PBXGroup;
+			children = (
+				CDC77AA51CEB82570056B15A /* aligned_buf.h */,
+				CDC77AA61CEB82570056B15A /* controllers.h */,
+				CDC77AA71CEB82570056B15A /* dx7note.cc */,
+				CDC77AA81CEB82570056B15A /* dx7note.h */,
+				CDC77AA91CEB82570056B15A /* env.cc */,
+				CDC77AAA1CEB82570056B15A /* env.h */,
+				CDC77AAB1CEB82570056B15A /* exp2.cc */,
+				CDC77AAC1CEB82570056B15A /* exp2.h */,
+				CDC77AAD1CEB82570056B15A /* fir.cc */,
+				CDC77AAE1CEB82570056B15A /* fir.h */,
+				CDC77AAF1CEB82570056B15A /* fm_core.cc */,
+				CDC77AB01CEB82570056B15A /* fm_core.h */,
+				CDC77AB11CEB82570056B15A /* fm_op_kernel.cc */,
+				CDC77AB21CEB82570056B15A /* fm_op_kernel.h */,
+				CDC77AB31CEB82570056B15A /* freqlut.cc */,
+				CDC77AB41CEB82570056B15A /* freqlut.h */,
+				CDC77AB51CEB82570056B15A /* lfo.cc */,
+				CDC77AB61CEB82570056B15A /* lfo.h */,
+				CDC77AB71CEB82570056B15A /* log2.cc */,
+				CDC77AB81CEB82570056B15A /* log2.h */,
+				CDC77AB91CEB82570056B15A /* module.h */,
+				CDC77ABA1CEB82570056B15A /* patch.cc */,
+				CDC77ABB1CEB82570056B15A /* patch.h */,
+				CDC77ABC1CEB82570056B15A /* pitchenv.cc */,
+				CDC77ABD1CEB82570056B15A /* pitchenv.h */,
+				CDC77ABE1CEB82570056B15A /* resofilter.cc */,
+				CDC77ABF1CEB82570056B15A /* resofilter.h */,
+				CDC77AC01CEB82570056B15A /* ringbuffer.cc */,
+				CDC77AC11CEB82570056B15A /* ringbuffer.h */,
+				CDC77AC21CEB82570056B15A /* sawtooth.cc */,
+				CDC77AC31CEB82570056B15A /* sawtooth.h */,
+				CDC77AC41CEB82570056B15A /* sin.cc */,
+				CDC77AC51CEB82570056B15A /* sin.h */,
+				CDC77AC61CEB82570056B15A /* synth.h */,
+				CDC77AC71CEB82570056B15A /* synth_unit.cc */,
+				CDC77AC81CEB82570056B15A /* synth_unit.h */,
+				CDC77AC91CEB82570056B15A /* wavout.cc */,
+				CDC77ACA1CEB82570056B15A /* wavout.h */,
+			);
+			path = MSFA;
+			sourceTree = "<group>";
+		};
+		CDC77ACD1CEB82570056B15A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				CDC77ACE1CEB82570056B15A /* Midi */,
+				CDC77AD41CEB82570056B15A /* sysex */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		CDC77ACE1CEB82570056B15A /* Midi */ = {
+			isa = PBXGroup;
+			children = (
+				CDC77ACF1CEB82570056B15A /* quarter_note_test.mid */,
+				CDC77AD01CEB82570056B15A /* chopin.mid */,
+				CDC77AD31CEB82570056B15A /* theme.mid */,
+			);
+			path = Midi;
+			sourceTree = "<group>";
+		};
+		CDC77AD41CEB82570056B15A /* sysex */ = {
+			isa = PBXGroup;
+			children = (
+				CDC77AD51CEB82570056B15A /* brass.syx */,
+				CDC77AD61CEB82570056B15A /* guitars.syx */,
+				CDC77AD71CEB82570056B15A /* nb-theme.syx */,
+				CDC77AD81CEB82570056B15A /* yamaha.syx */,
+			);
+			path = sysex;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CDC77A8B1CEB81CE0056B15A /* MidiDisaster */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CDC77A9D1CEB81CE0056B15A /* Build configuration list for PBXNativeTarget "MidiDisaster" */;
+			buildPhases = (
+				CDC77A881CEB81CE0056B15A /* Sources */,
+				CDC77A891CEB81CE0056B15A /* Frameworks */,
+				CDC77A8A1CEB81CE0056B15A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MidiDisaster;
+			productName = MidiDisaster;
+			productReference = CDC77A8C1CEB81CE0056B15A /* MidiDisaster.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CDC77A841CEB81CE0056B15A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = "Collinator Studios";
+				TargetAttributes = {
+					CDC77A8B1CEB81CE0056B15A = {
+						CreatedOnToolsVersion = 7.2.1;
+					};
+				};
+			};
+			buildConfigurationList = CDC77A871CEB81CE0056B15A /* Build configuration list for PBXProject "MidiDisaster" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CDC77A831CEB81CE0056B15A;
+			productRefGroup = CDC77A8D1CEB81CE0056B15A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CDC77A8B1CEB81CE0056B15A /* MidiDisaster */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CDC77A8A1CEB81CE0056B15A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CDC77A961CEB81CE0056B15A /* Assets.xcassets in Resources */,
+				CDC77AED1CEB82570056B15A /* quarter_note_test.mid in Resources */,
+				CDC77A991CEB81CE0056B15A /* MainMenu.xib in Resources */,
+				CDC77AF31CEB82570056B15A /* guitars.syx in Resources */,
+				CDC77AEE1CEB82570056B15A /* chopin.mid in Resources */,
+				CDC77AF11CEB82570056B15A /* theme.mid in Resources */,
+				CDC77AF21CEB82570056B15A /* brass.syx in Resources */,
+				CDC77AF41CEB82570056B15A /* nb-theme.syx in Resources */,
+				CDC77AF51CEB82570056B15A /* yamaha.syx in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CDC77A881CEB81CE0056B15A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CDC77AE61CEB82570056B15A /* resofilter.cc in Sources */,
+				CDC77ADB1CEB82570056B15A /* dx7note.cc in Sources */,
+				CDC77AE51CEB82570056B15A /* pitchenv.cc in Sources */,
+				CDC77AE11CEB82570056B15A /* freqlut.cc in Sources */,
+				CDC77A941CEB81CE0056B15A /* main.m in Sources */,
+				CDC77AE01CEB82570056B15A /* fm_op_kernel.cc in Sources */,
+				CDC77AEA1CEB82570056B15A /* synth_unit.cc in Sources */,
+				CDC77A911CEB81CE0056B15A /* AppDelegate.m in Sources */,
+				CDC77B001CEB82DD0056B15A /* FileHelper.m in Sources */,
+				CDC77AEB1CEB82570056B15A /* wavout.cc in Sources */,
+				CDC77ADE1CEB82570056B15A /* fir.cc in Sources */,
+				CDC77ADC1CEB82570056B15A /* env.cc in Sources */,
+				CDC77ADD1CEB82570056B15A /* exp2.cc in Sources */,
+				CDC77AEC1CEB82570056B15A /* NBAudioStream.m in Sources */,
+				CDC77AE81CEB82570056B15A /* sawtooth.cc in Sources */,
+				CDC77ADF1CEB82570056B15A /* fm_core.cc in Sources */,
+				CDC77AD91CEB82570056B15A /* FMInstrument.mm in Sources */,
+				CDC77AE91CEB82570056B15A /* sin.cc in Sources */,
+				CDC77AE41CEB82570056B15A /* patch.cc in Sources */,
+				CDC77AE31CEB82570056B15A /* log2.cc in Sources */,
+				CDC77ADA1CEB82570056B15A /* MidiPlayer.m in Sources */,
+				CDC77AE71CEB82570056B15A /* ringbuffer.cc in Sources */,
+				CDC77AE21CEB82570056B15A /* lfo.cc in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		CDC77A971CEB81CE0056B15A /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CDC77A981CEB81CE0056B15A /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CDC77A9B1CEB81CE0056B15A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		CDC77A9C1CEB81CE0056B15A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		CDC77A9E1CEB81CE0056B15A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = MidiDisaster/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.collinatorstudios.MidiDisaster;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		CDC77A9F1CEB81CE0056B15A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = MidiDisaster/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.collinatorstudios.MidiDisaster;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CDC77A871CEB81CE0056B15A /* Build configuration list for PBXProject "MidiDisaster" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CDC77A9B1CEB81CE0056B15A /* Debug */,
+				CDC77A9C1CEB81CE0056B15A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CDC77A9D1CEB81CE0056B15A /* Build configuration list for PBXNativeTarget "MidiDisaster" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CDC77A9E1CEB81CE0056B15A /* Debug */,
+				CDC77A9F1CEB81CE0056B15A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CDC77A841CEB81CE0056B15A /* Project object */;
+}
