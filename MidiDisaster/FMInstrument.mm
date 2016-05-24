@@ -7,31 +7,20 @@
 @interface FMInstrument ()
 
 @property (nonatomic) MIDITimeStamp lastReadAt;
-@property (nonatomic, strong) NSMutableArray *deltas;
 
 @end
-
-
-double convertToSeconds(MIDITimeStamp timestmap) {
-    double kOneMillion = 1000.0f * 1000.0f;
-    static mach_timebase_info_data_t s_timebase_info;
-    
-    if (s_timebase_info.denom == 0) {
-        (void) mach_timebase_info(&s_timebase_info);
-    }
-    
-    // mach_absolute_time() returns billionth of seconds,
-    // so divide by one million to get milliseconds
-    return (double)timestmap * (double)s_timebase_info.numer / (kOneMillion * (double)s_timebase_info.denom) * 0.001f;
-}
 
 @implementation FMInstrument {
     SynthUnit *_synthUnit;
     RingBuffer *_ringBuffer;
     short *_generatedSamples;
+    MIDIPacket *_midiPackets;
+    MIDIPacket _lastMidiPacket;
     int _bufferReadIndex;
     int _bufferWriteIndex;
     int _maxBufferIndex;
+    int _midiPacketReadIndex;
+    int _midiPacketWriteIndex;
     double _nanoSecondsToSeconds;
 }
 
@@ -49,9 +38,12 @@ double convertToSeconds(MIDITimeStamp timestmap) {
         _synthUnit        = new SynthUnit(_ringBuffer);
         _maxBufferIndex   = (int)([self sampleRate] * 45) - 1;
         _generatedSamples = (short *)calloc(_maxBufferIndex + 1, sizeof(short));
+        _midiPackets      = (MIDIPacket *)calloc(1024, sizeof(MIDIPacket));
         _bufferReadIndex  = 0;
         _bufferWriteIndex = 0;
-        
+        _midiPacketReadIndex  = 0;
+        _midiPacketWriteIndex = 0;
+        _lastMidiPacket       = {0};
         mach_timebase_info_data_t sTimebaseInfo;
         mach_timebase_info(&sTimebaseInfo);
         
@@ -69,19 +61,29 @@ double convertToSeconds(MIDITimeStamp timestmap) {
 -(void)startPolling {
     while (![self isActive]) {
         @autoreleasepool {
-            if (![self.deltas count]) continue;
-            
-            int numberOfSamplesToGenerate = ceil([self sampleRate] * [[self.deltas lastObject] doubleValue]);
-            [self.deltas removeLastObject];
+            if (_midiPacketWriteIndex <= _midiPacketReadIndex) continue;
+            MIDIPacket midiPacket     = _midiPackets[_midiPacketReadIndex];
+            MIDIPacket lastMidiPacket = _lastMidiPacket;
+
+            _ringBuffer->Write(midiPacket.data, midiPacket.length);
+            BOOL isFirstEvent = !_lastMidiPacket.timeStamp;
+            _lastMidiPacket = midiPacket;
+            if (isFirstEvent) continue;
+
+            _midiPacketReadIndex += 1;
+            double delta = (midiPacket.timeStamp * _nanoSecondsToSeconds) - (lastMidiPacket.timeStamp *_nanoSecondsToSeconds);
+
+            int numberOfSamplesToGenerate = ceil([self sampleRate] * delta);
             short *tempBuffer = (short *)malloc(sizeof(short) * numberOfSamplesToGenerate);
             _synthUnit->GetSamples(numberOfSamplesToGenerate, tempBuffer);
-            
-            for (int i = 0; i < numberOfSamplesToGenerate; i++) {
+
+            for (int i = 0; i < numberOfSamplesToGenerate && _bufferWriteIndex <= _maxBufferIndex; i++) {
                 _generatedSamples[_bufferWriteIndex] = tempBuffer[i];
                 _bufferWriteIndex += 1;
-                if (_bufferWriteIndex > _maxBufferIndex) _bufferWriteIndex = 0;
             }
+
             free(tempBuffer);
+            [NSThread sleepForTimeInterval:0.05f];
         }
     }
 }
@@ -111,13 +113,6 @@ double convertToSeconds(MIDITimeStamp timestmap) {
     free(_generatedSamples);
 }
 
--(NSMutableArray *)deltas {
-    if (!_deltas) {
-        _deltas = [NSMutableArray arrayWithCapacity:512];
-    }
-    return _deltas;
-}
-
 -(void)fillBuffer:(short *)buffer bufferSize:(NSUInteger)bufferSize {
     for (int i = 0; i < bufferSize; i++) {
         buffer[i] = _generatedSamples[_bufferReadIndex];
@@ -131,14 +126,37 @@ double convertToSeconds(MIDITimeStamp timestmap) {
     _ringBuffer->Write(buffer, 4104);
 }
 
--(void)writePacketWithObservedTimestamps:(MIDIPacket)packet {
-    _ringBuffer->Write(packet.data, packet.length);
-    MIDITimeStamp now = packet.timeStamp;
-    if (self.lastReadAt) {
-        NSNumber *delta = [NSNumber numberWithDouble:convertToSeconds(now) - convertToSeconds(self.lastReadAt)];
-        [self.deltas insertObject:delta atIndex:0];
+-(void)generateSamplesForDuration:(double)duration {
+    int numberOfSamplesToGenerate = [self sampleRate] * duration;
+    short *tempBuffer = (short *)malloc(sizeof(short) * numberOfSamplesToGenerate);
+    _synthUnit->GetSamples(numberOfSamplesToGenerate, tempBuffer);
+    
+    for (int i = 0; i < numberOfSamplesToGenerate; i++) {
+        _generatedSamples[_bufferWriteIndex] = tempBuffer[i];
+        _bufferWriteIndex += 1;
+        if (_bufferWriteIndex > _maxBufferIndex) _bufferWriteIndex = 0;
     }
-    self.lastReadAt = now;
+    free(tempBuffer);
 }
+
+-(void)writeMidiNote:(int)midiNote velocity:(int)velocity {
+    MIDIPacket packet = [self packetWith:0x90 dataByte1:velocity dataByte2:0];
+    _ringBuffer->Write(packet.data, packet.length);
+}
+
+-(void)enqueueMidiPacket:(MIDIPacket)packet {
+    _midiPackets[_midiPacketWriteIndex] = packet;
+    _midiPacketWriteIndex += 1;
+}
+
+-(MIDIPacket)packetWith:(char)command dataByte1:(char)dataByte1 dataByte2:(char)dataByte2 {
+    MIDIPacket packet;
+    packet.data[0] = command;
+    packet.data[1] = dataByte1;
+    packet.data[2] = dataByte2;
+    packet.length = 3;
+    return packet;
+}
+
 
 @end

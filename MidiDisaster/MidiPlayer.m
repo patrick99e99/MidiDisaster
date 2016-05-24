@@ -24,7 +24,7 @@ static void midiReadProc(const MIDIPacketList *pktlist,
     for (int i = 0; i < pktlist->numPackets; i++) {
         NSUInteger channel = packet->data[0] & 0xf;
         FMInstrument *fmInstrument = midiData->fmInstruments[channel];
-        if (fmInstrument) [fmInstrument writePacketWithObservedTimestamps:*packet];
+        if (fmInstrument) [fmInstrument enqueueMidiPacket:*packet];
         packet = MIDIPacketNext(packet);
     }
 }

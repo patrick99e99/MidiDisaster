@@ -9,7 +9,9 @@ static float const MAX_FM_INSTRUMENT_VELOCITY = 128.0f;
 +(void)initializeFMSynthUnit;
 +(NSUInteger)sampleRate;
 -(instancetype)initWitHSysex:(NSData *)sysex;
--(void)writePacketWithObservedTimestamps:(MIDIPacket)packet;
+-(void)enqueueMidiPacket:(MIDIPacket)packet;
+-(void)writeMidiNote:(int)midiNote velocity:(int)velocity;
+-(void)generateSamplesForDuration:(double)duration;
 -(void)setTrackNumber:(NSUInteger)trackNumber;
 
 @end
